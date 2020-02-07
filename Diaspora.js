@@ -114,3 +114,36 @@ $(function () {
         }, 500)
     })
 })
+
+/* source code from https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
+ * iyzyi revised some details
+*/
+$(function () {
+    function formatDate(date) {
+        var monthNames = [
+          "January", "February", "March",
+          "April", "May", "June", "July",
+          "August", "September", "October",
+          "November", "December"
+        ];
+      
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+      
+        if (day % 10 == 1){
+            day += "st";
+        } else if (day % 10 == 2){
+            day += "nd";
+        } else if (day % 10 == 3){
+            day += "rd";
+        } else{
+            day += "th";
+        }
+      
+        return monthNames[monthIndex] + ' ' + day +  ', ' + year;
+    }
+      
+    console.log(formatDate(new Date()));
+    $("#date").text(formatDate(new Date()));
+});
