@@ -1294,3 +1294,48 @@ ol.children li {
     content: "\e60e";
 }
 
+
+/* 图标 */
+.link-contentqt {
+    padding: 20px 4px;
+    list-style: none;
+    display: inline-block
+}
+
+.link-contentqt li {
+    text-align: center;
+    font-size: 14px;
+    width: 40px;
+    height: 40px;
+    list-style-type: none;
+    float: left
+}
+
+.link-contentqt li img {
+    border-radius: 100%;
+    margin-bottom: 5px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    width: 32px;
+    padding: 4px;
+}
+
+.link-contentqt li span {
+    display: block
+}
+
+.link-contentqt li:hover img {
+    -webkit-transform: scale(1.2,1.2);
+    -moz-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2)
+}
+
+.link-contentqt:after {
+    clear:both;
+    content:'.';
+    display:block;
+    width: 0;
+    height: 0;
+    visibility:hidden;
+}
+/* 图标 */
