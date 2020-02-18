@@ -475,20 +475,8 @@ body.mu .icon-logo {
 }
 
 #container {
-    padding-bottom: 100px;
     overflow: hidden;
     position: relative;
-}
-#container:before {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 200%;
-    position: absolute;
-    left: 50%;
-    background: #eaeaea;
-    top: -50%;
-    z-index: 0;
 }
 #primary {
     position: relative;
