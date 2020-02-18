@@ -1174,7 +1174,7 @@ ol.children li {
     }
     #post0 h2 + p {
         text-align: left;
-        margin: 10px 20px 0 0;
+        margin: 10px 0 0 0;
         color: #f2f2f2;
         font-size: 12px;
     }
@@ -1287,7 +1287,7 @@ ol.children li {
 .link-contentqt {
     padding: 20px 4px;
     list-style: none;
-    display: inline-block
+    display: inline-block;
 }
 
 .link-contentqt li {
