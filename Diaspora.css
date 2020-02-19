@@ -205,10 +205,15 @@ body.touch .scrollbar {
         opacity: 0.3;
     }
     #post0 {
-        bottom: 60px;
+        bottom: 10px;
         top: auto;
         width: 70%;
         left: 5%;
+    }
+    .link-contentqt {
+        padding: 5px 4px!important;
+        list-style: none;
+        display: inline-block;
     }
 }
 @media screen and (max-width: 480px) {
@@ -228,12 +233,17 @@ body.touch .scrollbar {
     #post0 h2 a {
         color: #fff;
     }
+    .link-contentqt {
+        padding: 5px 4px!important;
+        list-style: none;
+        display: inline-block;
+    }
 }
 
 
 /* 图标 */
 .link-contentqt {
-    padding: 20px 4px;
+    padding: 20px 0;
     list-style: none;
     display: inline-block;
 }
@@ -253,7 +263,7 @@ body.touch .scrollbar {
     transition: .5s;
     -webkit-transition: .5s;
     width: 32px;
-    padding: 4px;
+    padding: 4px 4px 4px 0;
 }
 
 .link-contentqt li span {
