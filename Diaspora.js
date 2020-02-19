@@ -5,7 +5,6 @@
  */
 
 var Home = location.href,
-    Pages = 4,
     xhr,
     xhrUrl = '';
 
@@ -43,46 +42,6 @@ var Diaspora = {
 
     P: function() {
         return !!('ontouchstart' in window);
-    },
-
-    PS: function() {
-        if (!(window.history && history.pushState)) return;
-
-        history.replaceState({u: Home, t: document.title}, document.title, Home)
-
-        window.addEventListener('popstate', function(e) {
-            var state = e.state;
-
-            if (!state) return;
-
-            document.title = state.t;
-
-            if (state.u == Home) {
-                $('#preview').css('position', 'fixed')
-                setTimeout(function() {
-                    $('#preview').removeClass('show').addClass('trans')
-                    $('#container').show()
-                    window.scrollTo(0, parseInt($('#container').data('scroll')))
-                    setTimeout(function() {
-                        $('#preview').html('')
-                        $(window).trigger('resize')
-                    }, 300)
-                }, 0)
-            } else {
-                Diaspora.loading()
-
-                Diaspora.L(state.u, function(data) {
-
-                    document.title = state.t;
-
-                    $('#preview').html($(data).filter('#single'))
-
-                    Diaspora.preview()
-
-                    setTimeout(function() { Diaspora.player(state.d) }, 0)
-                })
-            }
-        })
     },
 
     HS: function(tag, flag) {
@@ -167,7 +126,6 @@ var Diaspora = {
         id.style.left = (_width - parseInt(id.style.width)) / 2 +'px';
         id.style.top = (_height - parseInt(id.style.height)) / 2 +'px';
     }
-
 }
 
 $(function() {
@@ -248,10 +206,6 @@ $(function() {
             alert('Please set the post thumbnail')
         }
 
-        $('#preview').css('min-height', window.innerHeight)
-
-        Diaspora.PS()
-
         var T;
         $(window).on('resize', function() {
             clearTimeout(T)
@@ -268,20 +222,6 @@ $(function() {
             }, 500)
         })  
     } else {
-
         $('html, body').removeClass('loading')
-        
-        window.addEventListener('popstate', function(e) {
-            if (e.state) location.href = e.state.u;
-        })
     }
-
-
-    $('body').on('click', function(e) {
-
-        var tag = $(e.target).attr('class') || '',
-            rel = $(e.target).attr('rel') || '';
-
-        if (!tag && !rel) return;
-    })
 })

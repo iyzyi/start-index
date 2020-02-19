@@ -204,9 +204,6 @@ body.touch .scrollbar {
     #vibrant div {
         opacity: 0.3;
     }
-    #container {
-        padding-bottom: 50px;
-    }
     #post0 {
         bottom: 60px;
         top: auto;
